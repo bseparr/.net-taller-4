@@ -1,0 +1,65 @@
+﻿@model WebApplication2.Models.AUTOS
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar autos</h2>
+
+<h3>Está seguro de eliminar este auto?</h3>
+<div>
+    <h4>AUTOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Patente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PATENTE)
+        </dd>
+
+        <dt>
+            Año
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            Color
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COLOR)
+        </dd>
+
+        <dt>
+            Observación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBSERVACION)
+        </dd>
+
+        <dt>
+            Modelo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODELO.DESCRIPCION_MODELO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>
